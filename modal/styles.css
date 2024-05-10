@@ -1,0 +1,18 @@
+body {
+    background: lightblue;
+    position: relative;
+    height: 100vh;
+}
+
+#open-btn {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    padding: 0 25px;
+    background: transparent;
+    color: white;
+    border: solid 2px white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px black;
+    transition: 0.5s;
+}
