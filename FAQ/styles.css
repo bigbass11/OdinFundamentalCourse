@@ -1,14 +1,21 @@
 /* Gradient background with animated effect */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
-    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
   }
   
   @keyframes gradientBG {
@@ -24,14 +31,46 @@ body {
   }
   
 
-.accordian {
-    width: 65%;
+.accordion {
+    width: 50%;
     background-color: white;
     padding: 30px;
     border-radius: 30px;
 }
 
-.accordian .accordian-title {
+.accordion .accordion-title {
     margin-bottom: 30px;
     text-align: center;
+    font-size: 2rem;
+}
+
+.accordion .content-container .question {
+    margin: 18px auto;
+    padding-bottom: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-bottom: 1px solid black ;
+    position:relative;
+}
+
+.accordion .content-container .question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.accordion .content-container .answer {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+
+.accordion .content-container.active .answer {
+    max-height: 5000px;
+    margin-bottom: 50px;
 }
